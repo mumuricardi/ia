@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guia Vet 2.0 - Cuidado e Informação</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1 class="logo">Guia Vet 2.0</h1>
+            <nav>
+                <a href="#doencas" class="nav-link">Doenças</a>
+                <a href="#prevencao" class="nav-link">Prevenção</a>
+                <a href="#faq" class="nav-link">Dúvidas</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section id="hero">
+            <div class="container">
+                <h2>Informação que Salva Vidas</h2>
+                <p>O guia completo para tutores responsáveis. Aprenda sobre doenças, prevenção e cuidados essenciais para seu melhor amigo.</p>
+                <a href="#doencas" class="cta-button">Comece a explorar</a>
+            </div>
+        </section>
+
+        <section id="doencas" class="content-section">
+            <div class="container">
+                <h2>Principais Doenças</h2>
+                <p class="section-subtitle">Conhecer os sinais é o primeiro passo para o tratamento.</p>
+                <input type="text" id="buscaDoenca" placeholder="Buscar doença pelo nome...">
+                <div class="card-container">
+                    <article class="card">
+                        <h3>Cinomose</h3>
+                        <p>Doença viral altamente contagiosa que afeta cães. Os sintomas incluem febre, secreções oculares/nasais e problemas neurológicos. A vacinação é a principal forma de prevenção.</p>
+                    </article>
+                    <article class="card">
+                        <h3>Parvovirose</h3>
+                        <p>Infecção viral grave que causa vômito intenso, diarreia com sangue e desidratação em cães, especialmente filhotes. A vacinação é crucial.</p>
+                    </article>
+                    <article class="card">
+                        <h3>FIV e FeLV (Gatos)</h3>
+                        <p>São os vírus da imunodeficiência e da leucemia felina. Comprometem o sistema imune do gato, deixando-o vulnerável a outras doenças. Testagem e prevenção são fundamentais.</p>
+                    </article>
+                    <article class="card">
+                        <h3>Erliquiose (Doença do Carrapato)</h3>
+                        <p>Transmitida por carrapatos, esta doença bacteriana causa febre, perda de apetite e pode levar a sangramentos. O controle de ectoparasitas é essencial.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section id="prevencao" class="content-section">
+            <div class="container">
+                <h2>Prevenção é o Melhor Remédio</h2>
+                <p class="section-subtitle">Atitudes simples que garantem uma vida longa e saudável para seu pet.</p>
+                 <div class="card-container">
+                    <article class="card">
+                        <h3>Vacinação em Dia</h3>
+                        <p>Siga o calendário de vacinação recomendado pelo veterinário desde filhote. O reforço anual é vital para manter a proteção ativa.</p>
+                    </article>
+                    <article class="card">
+                        <h3>Controle de Parasitas</h3>
+                        <p>Use regularmente produtos contra pulgas e carrapatos. Vermifugue seu pet conforme a orientação profissional para evitar parasitas internos.</p>
+                    </article>
+                     <article class="card">
+                        <h3>Castração</h3>
+                        <p>Além de prevenir a superpopulação, a castração reduz o risco de tumores de mama e próstata, infecções uterinas e melhora o comportamento.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section id="faq" class="content-section">
+            <div class="container">
+                <h2>Dúvidas Frequentes</h2>
+                <p class="section-subtitle">Respostas rápidas para as perguntas mais comuns.</p>
+                <div class="accordion">
+                    <button class="accordion-button">
+                        Qual a importância da castração?
+                        <span class="icon"></span>
+                    </button>
+                    <div class="accordion-content">
+                        <p>A castração previne diversas doenças, como tumores de mama e próstata, controla o comportamento e evita a superpopulação de animais de rua. Consulte um veterinário para saber a melhor idade para realizar o procedimento.</p>
+                    </div>
+                </div>
+                <div class="accordion">
+                    <button class="accordion-button">
+                        Posso dar remédio de gente para meu pet?
+                        <span class="icon"></span>
+                    </button>
+                    <div class="accordion-content">
+                        <p>NÃO! Muitos medicamentos para humanos, como paracetamol e diclofenaco, são EXTREMAMENTE TÓXICOS para cães e gatos e podem ser fatais. Nunca medique seu animal sem a prescrição de um médico veterinário.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <footer>
+        <div class="container">
+            <div id="aviso-importante">
+                <p><strong>ATENÇÃO:</strong> Este site é um recurso educacional. As informações aqui contidas NÃO substituem a consulta com um médico veterinário. <strong>Procure sempre um profissional.</strong></p>
+            </div>
+            <p class="copyright">&copy; 2025 Guia Vet 2.0 - Todos os direitos reservados.</p>
+        </div>
+    </footer>
+    
+    <button id="scrollTopBtn" title="Voltar ao topo">&uarr;</button>
+
+    <script src="script.js"></script>
+</body>
+</html>

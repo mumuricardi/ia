@@ -1,0 +1,310 @@
+/* --- RESET BÁSICO E CONFIGURAÇÕES GLOBAIS --- */
+:root {
+    --primary-color: #2a9d8f; /* Um verde azulado */
+    --secondary-color: #264653; /* Um azul escuro/carvão */
+    --background-color: #f8f9fa;
+    --card-background: #ffffff;
+    --text-color: #343a40;
+    --light-text-color: #f1faee;
+    --accent-color: #e9c46a; /* Um amarelo/dourado */
+    --shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    --border-radius: 8px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth; /* Comportamento de rolagem nativo */
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* --- HEADER E NAVEGAÇÃO --- */
+header {
+    background-color: var(--card-background);
+    padding: 1rem 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    box-shadow: var(--shadow);
+    transition: background-color 0.3s;
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    color: var(--primary-color);
+    font-weight: 700;
+}
+
+nav a {
+    color: var(--secondary-color);
+    text-decoration: none;
+    margin-left: 25px;
+    font-weight: 600;
+    position: relative;
+    transition: color 0.3s;
+}
+
+nav a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -5px;
+    left: 0;
+    background-color: var(--primary-color);
+    transition: width 0.3s;
+}
+
+nav a:hover, nav a.active {
+    color: var(--primary-color);
+}
+
+nav a:hover::after, nav a.active::after {
+    width: 100%;
+}
+
+/* --- SEÇÃO HERO --- */
+#hero {
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1548199973-03cce0bbc87b?q=80&w=2069') center/cover no-repeat;
+    color: var(--light-text-color);
+    text-align: center;
+    padding: 180px 0 100px 0; /* Mais padding no topo por causa do header fixo */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#hero h2 {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+#hero p {
+    font-size: 1.2rem;
+    max-width: 600px;
+    margin: 0 auto 2rem auto;
+}
+
+.cta-button {
+    background-color: var(--primary-color);
+    color: var(--light-text-color);
+    padding: 15px 30px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.cta-button:hover {
+    background-color: #238a7e;
+    transform: translateY(-3px);
+}
+
+/* --- SEÇÕES DE CONTEÚDO --- */
+.content-section {
+    padding: 80px 0;
+    opacity: 0; /* Começa invisível para animação */
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.content-section.visible {
+    opacity: 1; /* Fica visível quando a classe é adicionada */
+    transform: translateY(0);
+}
+
+.content-section h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    color: var(--secondary-color);
+}
+
+.section-subtitle {
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto 40px auto;
+    color: #6c757d;
+}
+
+#buscaDoenca {
+    width: 100%;
+    padding: 15px;
+    margin-bottom: 40px;
+    border: 2px solid #ddd;
+    border-radius: var(--border-radius);
+    font-size: 1rem;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+#buscaDoenca:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(42, 157, 143, 0.2);
+}
+
+/* --- DESIGN DE CARD --- */
+.card-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.card {
+    background-color: var(--card-background);
+    border-radius: var(--border-radius);
+    padding: 30px;
+    box-shadow: var(--shadow);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.card h3 {
+    color: var(--primary-color);
+    margin-bottom: 15px;
+}
+
+/* --- FAQ ACORDEÃO APRIMORADO --- */
+.accordion-button {
+    background-color: var(--card-background);
+    color: var(--secondary-color);
+    cursor: pointer;
+    padding: 20px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 1.1rem;
+    font-weight: 600;
+    transition: background-color 0.3s;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: var(--border-radius);
+    margin-top: 10px;
+    box-shadow: var(--shadow);
+}
+
+.accordion-button.active {
+    background-color: var(--primary-color);
+    color: var(--light-text-color);
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+.icon {
+    width: 1em;
+    height: 1em;
+    transition: transform 0.3s ease;
+    position: relative;
+}
+.icon::before, .icon::after {
+    content: '';
+    position: absolute;
+    background-color: var(--secondary-color);
+    width: 100%;
+    height: 2px;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    transition: transform 0.3s, background-color 0.3s;
+}
+.icon::after {
+    transform: translateY(-50%) rotate(90deg);
+}
+.accordion-button.active .icon::before {
+    transform: translateY(-50%) rotate(180deg);
+}
+.accordion-button.active .icon::after {
+    transform: translateY(-50%) rotate(0deg);
+}
+.accordion-button.active .icon::before,
+.accordion-button.active .icon::after {
+    background-color: var(--light-text-color);
+}
+
+
+.accordion-content {
+    padding: 0 20px;
+    background-color: var(--card-background);
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease-out, padding 0.4s ease-out;
+    border-bottom-left-radius: var(--border-radius);
+    border-bottom-right-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+}
+
+/* --- FOOTER --- */
+footer {
+    background-color: var(--secondary-color);
+    color: var(--light-text-color);
+    padding: 40px 0;
+    text-align: center;
+}
+
+#aviso-importante {
+    background-color: rgba(233, 196, 106, 0.2);
+    color: var(--accent-color);
+    border: 1px solid var(--accent-color);
+    padding: 15px;
+    border-radius: var(--border-radius);
+    margin-bottom: 20px;
+}
+
+.copyright {
+    font-size: 0.9rem;
+    opacity: 0.7;
+}
+
+/* --- BOTÃO VOLTAR AO TOPO --- */
+#scrollTopBtn {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    right: 30px;
+    z-index: 99;
+    border: none;
+    outline: none;
+    background-color: var(--primary-color);
+    color: white;
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    font-size: 24px;
+    box-shadow: var(--shadow);
+    transition: background-color 0.3s, opacity 0.3s, visibility 0.3s;
+}
+
+#scrollTopBtn:hover {
+    background-color: #238a7e;
+}
